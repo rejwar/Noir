@@ -1,0 +1,8 @@
+// ফাইলের নাম: EquationProof.noir
+// এই কোড প্রমাণ করে যে, তিনটি গোপন সংখ্যা secret1, secret2, এবং secret3-এর নির্দিষ্ট সমন্বয় 
+// ((secret1 + secret2) * secret3) একটি নির্দিষ্ট পাবলিক মানের সমান।
+fn main(secret1: Field, secret2: Field, secret3: Field, #[public] expected: Field) {
+    let sum = secret1 + secret2;
+    let product = sum * secret3;
+    assert(product == expected);
+}
