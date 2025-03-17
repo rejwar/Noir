@@ -1,0 +1,7 @@
+// ফাইলের নাম: QuadraticRootProof.noir
+// এই কোড প্রমাণ করে যে নির্দিষ্ট গোপন সংখ্যা (secret) একটি Quadratic সমীকরণের মূল, যেখানে 
+// সমীকরণটি হলো: a * x^2 + b * x + c = 0। 'a', 'b', এবং 'c' হলো পাবলিক ইনপুট।
+fn main(secret: Field, #[public] a: Field, #[public] b: Field, #[public] c: Field) {
+    let poly = a * secret * secret + b * secret + c;
+    assert(poly == 0);
+}
