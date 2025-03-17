@@ -1,0 +1,11 @@
+// ফাইলের নাম: SumProof.noir
+// এই কোড প্রমাণ করে যে আপনি দুটি গোপন সংখ্যার যোগফল জানেন,
+// যেখানে গণিতকৃত যোগফলটি একটি নির্দিষ্ট (পাবলিক) মানের সমান কিনা তা যাচাই করা হয়।
+
+fn main(secret1: Field, secret2: Field, #[public] expected_sum: Field) {
+    // দুটি গোপন সংখ্যার যোগফল গণনা করা হচ্ছে
+    let sum = secret1 + secret2;
+    
+    // যাচাই করা হচ্ছে যে গণিতকৃত যোগফলটি expected_sum এর সমান কিনা
+    assert(sum == expected_sum);
+}
